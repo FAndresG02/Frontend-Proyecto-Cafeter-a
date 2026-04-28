@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../../../services/user-service';
-import { Snackbar } from '../../../services/snackbar';
 import { MatDialogRef } from '@angular/material/dialog';
-import { COMMON_IMPORTS } from '../shared/common.imports';
-import { MATERIAL_IMPORTS } from '../shared/material.imports';
-import { GlobalConstants } from '../shared/global-constants';
-import { UserInterface } from '../../../interface/user-interface';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { MATERIAL_IMPORTS } from '../../shared/material.imports';
+import { COMMON_IMPORTS } from '../../shared/common.imports';
+import { UserService } from '../../../../services/user-service';
+import { Snackbar } from '../../../../services/snackbar';
+import { GlobalConstants } from '../../shared/global-constants';
+import { UserInterface } from '../../../../interface/user-interface';
 
 @Component({
   selector: 'app-signup',
@@ -123,6 +123,7 @@ export class Signup implements OnInit {
         // Obtener el mensaje de respuesta del backend
         this.responseMessage = response?.message;
         // Mostrar el mensaje de éxito al usuario
+        console.log(this.responseMessage);
         this.snackbarService.openSnackBar(this.responseMessage, "success");
         // Redirigir al usuario a la página de inicio de sesión después del registro exitoso
         this.router.navigate(['/']);

@@ -26,14 +26,19 @@
         <mat-label>Nombre de Usuario</mat-label>
         <input matInput formControlName="name" required>
 
-        <mat-error *ngIf="signupForm.controls['name'].touched">
-          <span *ngIf="signupForm.controls['name'].hasError('required')">
-            El nombre es obligatorio
-          </span>
-          <span *ngIf="signupForm.controls['name'].hasError('pattern')">
-            El nombre no es válido
-          </span>
+        @if (signupForm.controls['name'].touched) {
+        <mat-error>
+          @if (signupForm.controls['name'].hasError('required')) {
+          <span>El nombre es obligatorio</span>
+          }
+
+          @if (signupForm.controls['name'].hasError('pattern')) {
+          <span>El nombre no es válido</span>
+          }
         </mat-error>
+        }
+
+
       </mat-form-field>
 
       <!-- EMAIL -->
@@ -111,7 +116,8 @@
 <mat-dialog-actions align="end">
 
   <!-- SUBMIT -->
-  <button class="registrarse" mat-raised-button type="submit" (click)="handleSubmit()" [disabled]="validateSubmit() || signupForm.invalid">
+  <button class="registrarse" mat-raised-button type="submit" (click)="handleSubmit()"
+    [disabled]="validateSubmit() || signupForm.invalid">
     <mat-icon>save</mat-icon>
     Registrarse
   </button>

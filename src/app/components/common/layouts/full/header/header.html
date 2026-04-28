@@ -1,23 +1,11 @@
 <button [matMenuTriggerFor]="profile" class="profile-btn">
-  <div class="avatar">AD</div>
-  <div class="profile-info">
-    <span class="profile-name">Admin</span>
-    <span class="profile-role">Administrador</span>
-  </div>
-  <mat-icon class="chevron-icon">expand_more</mat-icon>
+  <mat-icon class="user-icon">account_circle</mat-icon>
 </button>
 
-<mat-menu #profile="matMenu" class="profile-menu">
+<mat-menu #profile="matMenu" class="profile-menu" >
 
-  <div class="menu-header" (click)="$event.stopPropagation()">
-    <div class="avatar-lg">AD</div>
-    <div>
-      <p class="menu-user-name">Administrador</p>
-      <p class="menu-user-email">admin@cafeteria.com</p>
-    </div>
-  </div>
-
-  <button mat-menu-item>
+  <button mat-menu-item (click)="changePassword()">
+    <!-- Icono de cambio de contraseña -->
     <mat-icon>lock_outline</mat-icon>
     <div class="menu-item-text">
       <span>Cambiar contraseña</span>
@@ -25,7 +13,7 @@
     </div>
   </button>
 
-  <button mat-menu-item class="logout-item">
+  <button mat-menu-item class="logout-item" (click)="logout()">
     <mat-icon>logout</mat-icon>
     <div class="menu-item-text">
       <span>Cerrar sesión</span>

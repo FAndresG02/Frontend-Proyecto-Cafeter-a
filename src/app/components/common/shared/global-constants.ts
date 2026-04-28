@@ -6,6 +6,8 @@ export class GlobalConstants {
     public static forbiddenMessage: string = "No tienes permiso para acceder a este recurso.";
     public static notFoundMessage: string = "El recurso solicitado no fue encontrado.";
     public static validationErrorMessage: string = "La validación falló. Por favor, revisa tus datos e inténtalo de nuevo.";
+    public static productExistError: string = "El producto ya existe. Por favor, elige un nombre diferente.";
+    public static productAdd: string = "Producto agregado exitosamente.";
 
     //Regex
 

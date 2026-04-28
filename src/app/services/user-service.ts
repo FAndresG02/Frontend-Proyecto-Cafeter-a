@@ -39,4 +39,14 @@ export class UserService {
   changePassword(data: any) {
     return this.http.post(`${this.url}/user/changePassword`, data, {headers: { 'Content-Type': 'application/json' }});
   }
+
+  //Metodo para obtener la lista de usuarios registrados en el sistema
+  getUsers(){
+    return this.http.get(`${this.url}/user/get`);
+  }
+
+  //Metodo para actualizar la información del usuario
+  update(data: any){
+    return this.http.post(`${this.url}/user/update`, data, {headers: { 'Content-Type': 'application/json' }});
+  }
 }

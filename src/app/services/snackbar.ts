@@ -16,20 +16,15 @@ export class Snackbar {
   //- message: el mensaje que se mostrará en el snackbar.
   //- action: una cadena que indica el tipo de mensaje (por ejemplo, 'error' para mensajes de error).
   openSnackBar(message: string, action: string) {
-    if (action === 'eror') {
-      this.snackbar.open(message, 'Cerrar', { 
-        //El mensaje se muestra en el centro horizontal 
-        // y en la parte superior de la pantalla, 
-        // y se cierra automáticamente después de 3000 milisegundos (3 segundos).
+    if (action === 'error') {
+      this.snackbar.open(message, 'Cerrar', {
         horizontalPosition: 'center',
         verticalPosition: 'top',
         duration: 3000,
-        //El panelClass se utiliza para aplicar estilos personalizados al snackbar. 
-        //En este caso, se aplicará la clase 'black-snackbar' para mensajes de error y 'green-snackbar' para mensajes de éxito.
         panelClass: ['black-snackbar']
       });
-    }else {
-      this.snackbar.open(message, 'Cerrar', { 
+    } else {
+      this.snackbar.open(message, 'Cerrar', {
         horizontalPosition: 'center',
         verticalPosition: 'top',
         duration: 3000,

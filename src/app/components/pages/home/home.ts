@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { BestSeller } from "../best-seller/best-seller";
 import { MatIcon } from "@angular/material/icon";
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { Signup } from '../../common/signup/signup';
-import { ForgotPassword } from '../../common/forgot-password/forgot-password';
-import { Login } from '../../common/login/login';
 import { UserService } from '../../../services/user-service';
 import { Router } from '@angular/router';
+import { Signup } from '../../common/dialog/signup/signup';
+import { ForgotPassword } from '../../common/dialog/forgot-password/forgot-password';
+import { Login } from '../../common/dialog/login/login';
 
 @Component({
   selector: 'app-home',

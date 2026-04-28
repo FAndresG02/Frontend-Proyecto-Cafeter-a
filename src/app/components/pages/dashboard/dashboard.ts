@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DashboardService } from '../../../services/dashboard-service';
@@ -6,13 +6,14 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Snackbar } from '../../../services/snackbar';
 import { GlobalConstants } from '../../common/shared/global-constants';
 import { MatCard } from "@angular/material/card";
+import { MATERIAL_IMPORTS } from '../../common/shared/material.imports';
+import { COMMON_IMPORTS } from '../../common/shared/common.imports';
 
 @Component({
   selector: 'app-dashboard',
   imports: [
-    CommonModule,
-    RouterModule,
-    MatCard
+    ...MATERIAL_IMPORTS,
+    ...COMMON_IMPORTS
 ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
@@ -27,6 +28,7 @@ export class Dashboard implements AfterViewInit{
   ngAfterViewInit(): void {}
 
   constructor(
+    private cdr: ChangeDetectorRef,
     // Inyección del router para redirigir al usuario a otras páginas
     private router: RouterModule,
     // Inyección del servicio de dashboard para obtener los detalles del usuario
@@ -54,8 +56,8 @@ export class Dashboard implements AfterViewInit{
       // Asigna los datos recibidos a la variable 'data' para mostrarlos en el dashboard
       this.data = response;
 
+      this.cdr.detectChanges();
       console.log(this.data);
-
     }, (error: any) => {
 
       // Detiene el spinner de carga en caso de error

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../../../services/user-service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
-import { Snackbar } from '../../../services/snackbar';
-import { GlobalConstants } from '../shared/global-constants';
-import { MATERIAL_IMPORTS } from '../shared/material.imports';
-import { COMMON_IMPORTS } from '../shared/common.imports';
+import { MATERIAL_IMPORTS } from '../../shared/material.imports';
+import { COMMON_IMPORTS } from '../../shared/common.imports';
+import { UserService } from '../../../../services/user-service';
+import { Snackbar } from '../../../../services/snackbar';
+import { GlobalConstants } from '../../shared/global-constants';
+
 
 @Component({
   selector: 'app-login',
@@ -59,6 +60,7 @@ export class Login {
     });
   }
 
+ // Método para manejar el envío del formulario de login
   handleSubmit() {
     // Iniciar el spinner de carga
     this.ngxService.start();
@@ -81,10 +83,13 @@ export class Login {
       this.router.navigate(['/cafe/dashboard']);
       // Obtener el mensaje de respuesta del backend
       this.responseMessage = response?.message;
-      this.snackbarService.openSnackBar(this.responseMessage, "Cerrar");
+      console.log(this.responseMessage);
+      this.snackbarService.openSnackBar(this.responseMessage, "Sesion iniciada exitosamente");
       this.dialogRef.close();
 
     }, (error) => {
+      // Detener el spinner de carga
+      this.ngxService.stop();
       // Obtener el mensaje de error del backend
       if (error.error?.message) {
         // Mostrar el mensaje de error al usuario

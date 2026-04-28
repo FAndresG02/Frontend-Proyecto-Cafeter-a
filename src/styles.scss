@@ -23,25 +23,43 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 0px 8px 0px 15px !important;
 }
 
-.black-snackbar {
-  background: black !important;
-  color: white !important;
+/* ─── SNACKBAR FORZADO ───────────────────────── */
+
+.mat-mdc-snack-bar-container.black-snackbar .mdc-snackbar__surface {
+  background: #000 !important;
 }
 
-.green-snackbar {
-  background: #00ff7f !important;
-  color: black !important;
+.mat-mdc-snack-bar-container.green-snackbar .mdc-snackbar__surface {
+  background: #2e7d32 !important;
 }
 
-.mat-snack-bar-container {
-  margin-right: auto !important;
-  margin-left: auto !important;
-  width: 40vw !important;
-  min-width: 90% !important;
-  max-width: 100vw !important;
-  margin-top: 70px !important;
-  padding: 20px !important;
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+  color: #fff !important;
 }
+
+.mat-mdc-snack-bar-container .mat-mdc-button {
+  color: #fff !important;
+}
+
+/* ❌ ELIMINAR TODO EFECTO VISUAL */
+.mat-mdc-snack-bar-container .mat-mdc-button:hover {
+  background: transparent !important;
+}
+
+.mat-mdc-snack-bar-container .mat-ripple-element {
+  display: none !important;
+}
+
+.mat-mdc-snack-bar-container .mat-mdc-focus-indicator {
+  display: none !important;
+}
+
+/* 🔥 ESTE ES EL QUE TE FALTABA */
+.mat-mdc-snack-bar-container .mat-mdc-button .mdc-button__ripple {
+  display: none !important;
+}
+
+//---------------------------------------
 
 .spacer {
   flex: 1 auto;
@@ -127,4 +145,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     small { color: #A32D2D !important; opacity: 0.7; }
     &:hover { background: #FCEBEB !important; }
   }
+}
+
+
+/* Estilos para el menu quitar trasnparente del menu perfil*/
+.mat-mdc-menu-panel.profile-menu {
+  background-color: #ffffff !important;
+}
+
+.mat-mdc-menu-panel.profile-menu .mat-mdc-menu-item:hover {
+  background-color: #f5f5f5 !important;
+}
+
+/* Estilos para el menu quitar trasnparente del menu categoria al momento de añadir una categoria*/
+.mat-mdc-select-panel.custom-select {
+  background-color: #ffffff !important;
+}
+
+.mat-mdc-select-panel.custom-select .mat-mdc-option:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.mat-mdc-option {
+  color: #000000 !important;
+}
+
+
+.mat-mdc-tooltip {
+  z-index: 9999 !important;
 }

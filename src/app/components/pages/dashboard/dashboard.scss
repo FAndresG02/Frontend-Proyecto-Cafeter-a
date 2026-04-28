@@ -1,3 +1,47 @@
+// ── Header card ─────────────────────────────────────────
+.header-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    border: 0.5px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+
+    b span {
+        font-size: 16px;
+        font-weight: 500;
+        color: #1a1a1a;
+    }
+
+    .add-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: #7b1fa2;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s ease;
+
+        mat-icon {
+            font-size: 18px;
+            height: 18px;
+            width: 18px;
+        }
+
+        &:hover {
+            background: #8340a0;
+        }
+    }
+}
+
 .position-relative {
 	position: relative;
 }
@@ -53,6 +97,7 @@ body {
   .title {
     color: black;
     text-align: center !important;
+    margin-top: 10px;
   }
   
   .button {
