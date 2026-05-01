@@ -1,11 +1,9 @@
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { DashboardService } from '../../../services/dashboard-service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Snackbar } from '../../../services/snackbar';
 import { GlobalConstants } from '../../common/shared/global-constants';
-import { MatCard } from "@angular/material/card";
 import { MATERIAL_IMPORTS } from '../../common/shared/material.imports';
 import { COMMON_IMPORTS } from '../../common/shared/common.imports';
 

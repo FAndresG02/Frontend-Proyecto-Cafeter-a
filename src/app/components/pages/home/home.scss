@@ -299,8 +299,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100% !important;
-}
+  width: 100% !important;  z-index: 1000;}
 
 .mat-icon {
   vertical-align: middle;
@@ -337,4 +336,34 @@ a {
   width: 55%;
   padding: 20px;
   text-align: center;
+}
+
+/* Estilo base (desktop) */
+ul li {
+  display: flex;
+  align-items: center;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+
+  ul {
+    width: 100%;
+  }
+
+  ul li {
+    flex-direction: column;   /* 🔥 los pone uno debajo del otro */
+    width: 100%;
+  }
+
+  ul li a {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  ul li a:first-child {
+    border-top: none;
+  }
 }

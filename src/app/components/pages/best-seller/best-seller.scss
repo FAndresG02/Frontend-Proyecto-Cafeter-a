@@ -12520,6 +12520,7 @@
      position: relative;
      min-height: 50px;
      margin-bottom: 50px;
+     overflow: hidden;
  }
 
  .timeline>li:after,
@@ -12556,7 +12557,7 @@
 
  .timeline>li .timeline-image {
      position: absolute;
-     z-index: 100;
+     z-index: 1;
      left: 0;
      width: 80px;
      height: 80px;
